@@ -67,8 +67,18 @@ function writePassword() {
   //character types to include in the password
   var mins = prompt("Please enter minimal length of password","no less than 8");
   var maxs = prompt("Please enter maximal length of password","no more than 128");
-  var min = parseInt(mins,10);
-  var max = parseInt(maxs,10);
+  if (isNaN(parseInt(mins,10))) {
+   var min = 8;
+  }
+  else {
+   var min = parseInt(mins,10);
+  }
+  if (isNaN(parseInt(maxs,10))) {
+   var max = 128
+  }
+  else {
+   var max = parseInt(maxs,10);
+  }
   var lows = confirm("Contains lowercase letter ?");
   if (lows == true) {
     var low = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
